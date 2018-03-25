@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<body>
+    <div id="app">
+        {{message}}
+    </div>
+    <div id="toggle">
+        <div v-if="visible">
+            <p>
+                This is only visible sometimes!
+            </p>
+            <img src="data:image/png;base64,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"
+                alt="Vue logo">
+        </div>
+        <button v-on:click="toggleVisibility">Toggle</button>
+    </div>
+    <div id="classDemo">
+        <h2>Demo of classes</h2>
+        <ul>
+            <li class="items">1: {{content}}</li>
+            <li class="items">2: {{content}}</li>
+            <li class="items">3: {{content}}</li>
+            <li class="items">4: {{content}}</li>
+            <li class="items">5: {{content}}</li>
+            <li class="items">6: {{content}}</li>
+        </ul>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> </head>
+<script src="main.js"></script>
+
+</html>

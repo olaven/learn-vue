@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        .todo{
+            text-decoration: underline; 
+        }
+        .done{
+            text-decoration: line-through; 
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-on:keyDown="handleKeyDown">
+        <h1>{{header}}</h1>
+        <input v-model="input" id="input" type="text" />
+        <h2>Todos</h2>
+        <ul id="todos">
+            <li v-for="todo in todos" v-on:click="setDone" class="todo">{{todo}}</li>
+        </ul>
+        <h2>Done</h2>
+        <ul id="done">
+            <li v-for="d in done" v-on:click="setTodo(this.event.target.innerHTML)" class="done">{{d}}</li>
+        </ul>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> </head>
+<script src="main.js"></script>
+
+</html>
