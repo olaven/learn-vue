@@ -16,15 +16,15 @@ let app = new Vue({
         }, 
         setTodo : (todo) => {
             app.input = "";
-            //filter from done and add to todos
-            app.done = app.done.filter(t => t !== todo); 
-            app.todos.push(todo); 
+            //filter from done
+            app.done = app.done.filter(d => d !== todo); 
+            app.todos.unshift(todo); 
         }, 
         setDone : (event) => {
             let todo = event.target.innerHTML; 
             //filter from todos and add to done 
             app.todos = app.todos.filter(t => t !== todo); 
-            app.done.push(todo); 
+            app.done.unshift(todo); 
         }
     }
 }); 

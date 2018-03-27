@@ -3,17 +3,38 @@
     --secondary-color: rgb(85, 3, 92); 
     --contrast-color: rgb(210, 207, 209); 
 }
+body {
+    background-color: var(--contrast-color); 
+}
 #app {
     background-color: var(--primary-color); 
     color: var(--contrast-color); 
     text-align: center; 
+    padding: 5vh; 
+    padding-bottom: 15vh;
 }
+/*container for the list*/
+#done, #todo {
+
+}
+/*container for the list items*/
 .todo, .done {
-    background-color: var(--secondary-color); 
+    background-color: var(--secondary-color);
+    border-color: var(--contrast-color); 
+    border-style: solid; 
+    display: inline-block; 
+    margin: 0.5vw; 
+    width: 20vw;  
 }
 .todo {
     text-decoration: underline;
 }
+.todo:hover {
+    text-decoration: line-through; 
+}
 .done {
     text-decoration: line-through;
+}
+.done:hover {
+    text-decoration: underline; 
 }

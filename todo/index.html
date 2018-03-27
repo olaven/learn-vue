@@ -2,20 +2,26 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div id="app" v-on:keyDown="handleKeyDown">
         <h1>{{header}}</h1>
-        <input v-model="input" id="input" type="text" />
+        <div class="row">
+            <span class="col-md-2"></span>
+            <input v-model="input" class="form-control col-md-8" type="text" />
+            <span class="col-md-2"></span>
+        </div>
         <h2>Todos</h2>
-        <ul id="todos">
-            <li v-for="todo in todos" v-on:click="setDone" class="todo">{{todo}}</li>
+        <ul id="todos row">
+            <li v-for="todo in todos" v-on:click="setDone" class="todo list-group-item">{{todo}}</li>
         </ul>
         <h2>Done</h2>
         <ul id="done">
-            <li v-for="d in done" v-on:click="setTodo(this.event.target.innerHTML)" class="done">{{d}}</li>
+            <li v-for="d in done" v-on:click="setTodo(this.event.target.innerHTML)" class="done list-group-item">{{d}}</li>
         </ul>
     </div>
 </body>
