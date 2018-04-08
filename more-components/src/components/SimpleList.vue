@@ -7,7 +7,9 @@
 <script>
     export default {
         name : "SimpleList", 
-        props : ["elements"]
+        props : {
+            elements : Array 
+        }
     }
 </script>
 

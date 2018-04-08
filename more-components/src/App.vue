@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <SimpleHeader :text="header"/>
+    <SimpleHeader :text="header.text" :size="header.size"/>
     <SimpleHeadedList 
-      v-for="section in sections" v-bind:key="section.header" 
+      v-for="section in sections" v-bind:key="section.header.text" 
       :header="section.header" :list="section.list"
     />
   </div>
@@ -20,18 +20,30 @@ export default {
   }, 
   data(){
     return {
-      header : "Welcome to my components!",
+      header : {
+        text : "Welcome to my components!", 
+        size : 1
+      },
       sections : [
         {
-          header : "header 1", 
+          header : {
+            text : "header 1", 
+            size : 2
+          }, 
           list : ['item1', 'item2']
         },
         {
-          header : "header 2", 
+          header : {
+            text : "header 2", 
+            size : 2
+          },           
           list : ['item1', 'item2', 'item3']
         },
         {
-          header : "header 3", 
+          header : {
+            text : "header 3", 
+            size : 2
+          },
           list : ['item1', 'item2']
         }
       ]

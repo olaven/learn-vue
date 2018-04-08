@@ -1,6 +1,6 @@
 <template>
     <div>
-        <SimpleHeader size="2" :text="header"/>
+        <SimpleHeader :size="header.size" :text="header.text"/>
         <SimpleList :elements="list"/>
     </div>
 </template>
@@ -16,7 +16,10 @@ export default {
         SimpleList
     },
     name : "SimpleHeadedList", 
-    props : ["header", "list"] 
+    props : { //type validating props 
+        header : Object, 
+        list : Array 
+    } 
 }
 </script>
 
